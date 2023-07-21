@@ -23,29 +23,33 @@ const Dashboard = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row', // To align left and right sections horizontally
-        padding: 16,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    contentContainer: {
+        flex: 1,
+        padding: 10,
+    },
+    centeredTextContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    dashboardText: {
+        fontSize: 20,
+        fontWeight: 'bold',
     },
     profileContainer: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'flex-end', // Align image to the right
+        alignItems: 'flex-end',
+        paddingRight: 10
     },
     profileImage: {
         width: 60,
         height: 60,
-        borderRadius: 50, // To make the image circular
-    },
-    contentContainer: {
-        flex: 3,
-        paddingLeft: 16, // To add spacing between the profile picture and content
-    },
-    dashboardText: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 16,
+        borderRadius: 50,
     },
 });
-
 
 export default Dashboard
