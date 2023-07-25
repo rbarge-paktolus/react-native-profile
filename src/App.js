@@ -1,11 +1,12 @@
 // App.js
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from './screens/SplashScreen';
 import LoginScreen from './screens/Login';
-import Dashboard from './screens/Dashboard';
+import Home from './screens/Home';
+import NewRegistration from './screens/NewRegistration';
+import ForgotPassword from './screens/ForgotPassword';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +24,9 @@ const App = () => {
           <Stack.Navigator>
               <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
               <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-              <Stack.Screen name="Dashboard" component={Dashboard} options={{headerShown: false}}/>
+              <Stack.Screen name="NewRegistration" component={NewRegistration} options={{headerShown: false}}/>
+              <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false }} />
+              <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
           </Stack.Navigator>
       </NavigationContainer>
   );
