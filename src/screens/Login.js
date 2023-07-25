@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Image, Dimensions , Text} from 'react-native';
+import { View, StyleSheet, Image, Dimensions, Text, TouchableOpacity } from 'react-native';
 import TextInputComponent from '../components/TextInput';
 import ButtonComponent from '../components/Button';
 import { validateUsername, validatePassword } from '../utils/ValidationUtils';
@@ -40,11 +40,7 @@ const LoginScreen = () => {
         console.log('Password:', password);
 
         try {
-            // Call the loginAPI function with username and password
-            // const response = await loginAPI(username, password);
-            // console.log('Login response:', response);
-            // Handle the API response and perform any necessary actions
-            navigation.navigate('Dashboard');
+            navigation.navigate('Home');
         } catch (error) {
             console.error('Error while logging in:', error);
             // Handle the error, show error message, etc.
@@ -79,8 +75,12 @@ const LoginScreen = () => {
                 <ButtonComponent title="Login" onPress={handleLogin} />
                 {/* Text below the button */}
                 <View style={styles.textContainer}>
-                    <Text style={styles.signupText}>Don't have an account?</Text>
-                    <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+                        <Text style={styles.signupText}>Don't have an account?</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('NewRegistration')}>
+                        <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
